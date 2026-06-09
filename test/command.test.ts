@@ -11,7 +11,8 @@ describe('core-cli command', () => {
   })
 
   it('declares --name flag', () => {
-    expect(command.args?.name).toMatchObject({ type: 'string' })
+    const args = command.args as { name?: { type: string } }
+    expect(args?.name).toMatchObject({ type: 'string' })
   })
 
   it('exposes a callable run function', () => {

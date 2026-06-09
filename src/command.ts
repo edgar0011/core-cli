@@ -2,11 +2,13 @@ import * as p from '@clack/prompts'
 import { defineCommand } from 'citty'
 import pc from 'picocolors'
 
+import pkg from '../package.json' with { type: 'json' }
+
 export const command = defineCommand({
   meta: {
-    name: 'core-cli',
-    version: '0.0.1',
-    description: 'A modern Node 24+ ESM CLI',
+    name: pkg.name,
+    version: pkg.version,
+    description: pkg.description,
   },
   args: {
     name: {
